@@ -2,7 +2,6 @@ package com.mindtree.vehiclebusiness.controller;
 
 import java.io.StringReader;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -59,8 +58,10 @@ public class RentalController {
 	 * Logger is used as custom information for admin. We can check errors in
 	 * file in tomcat.
 	 */
-	//private Logger logger = Logger.getLogger(RentalController.class.getName());
-	private static Logger logger = LoggerFactory.getLogger(RentalController.class);
+	// private Logger logger =
+	// Logger.getLogger(RentalController.class.getName());
+	private static Logger logger = LoggerFactory
+			.getLogger(RentalController.class);
 
 	/*
 	 * Jaxb2Marshaller is built-in class that converts java object(s) into xml
