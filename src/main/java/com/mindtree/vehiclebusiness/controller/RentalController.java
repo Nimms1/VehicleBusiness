@@ -1,6 +1,8 @@
 package com.mindtree.vehiclebusiness.controller;
 
 import java.io.StringReader;
+
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +10,8 @@ import java.util.List;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Controller;
@@ -56,7 +59,8 @@ public class RentalController {
 	 * Logger is used as custom information for admin. We can check errors in
 	 * file in tomcat.
 	 */
-	private Logger logger = Logger.getLogger(RentalController.class.getName());
+	//private Logger logger = Logger.getLogger(RentalController.class.getName());
+	private static Logger logger = LoggerFactory.getLogger(RentalController.class);
 
 	/*
 	 * Jaxb2Marshaller is built-in class that converts java object(s) into xml

@@ -4,9 +4,10 @@
 package com.mindtree.vehiclebusiness.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.log4j.Logger;
+import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mindtree.vehiclebusiness.controller.RentalController;
@@ -37,8 +38,10 @@ public class VehicleServiceImpl implements VehicleService {
 	 * Logger is used as custom information for admin. We can check errors in
 	 * file in tomcat.
 	 */
-	private Logger logger = Logger
-			.getLogger(VehicleServiceImpl.class.getName());
+	/*private Logger logger = Logger
+			.getLogger(VehicleServiceImpl.class.getName());*/
+	private static Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
+
 
 	public void addVehicle(VehicleDto v) throws ServiceException {
 

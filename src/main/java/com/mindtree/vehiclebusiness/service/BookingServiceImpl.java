@@ -4,9 +4,12 @@
 package com.mindtree.vehiclebusiness.service;
 
 import java.util.ArrayList;
+
+
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mindtree.vehiclebusiness.controller.RentalController;
@@ -32,9 +35,11 @@ public class BookingServiceImpl implements BookingService {
 	 * Logger is used as custom information for admin. We can check errors in
 	 * file in tomcat.
 	 */
-	private Logger logger = Logger
+	/*private Logger logger = Logger
 			.getLogger(BookingServiceImpl.class.getName());
-
+*/
+	
+	private static Logger logger = LoggerFactory.getLogger(BookingServiceImpl.class);
 	/*
 	 * (non-Javadoc)
 	 * 

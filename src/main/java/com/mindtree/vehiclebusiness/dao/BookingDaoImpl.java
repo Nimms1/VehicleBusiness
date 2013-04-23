@@ -5,7 +5,8 @@ package com.mindtree.vehiclebusiness.dao;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
+
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
@@ -13,6 +14,8 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import com.mindtree.vehiclebusiness.dto.BookingDto;
 import com.mindtree.vehiclebusiness.entity.Booking;
 import com.mindtree.vehiclebusiness.exception.DaoException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author M1018439
@@ -30,7 +33,8 @@ public class BookingDaoImpl implements BookingDao {
 
 	public HibernateTemplate hibernateTemplate;
 
-	private Logger logger = Logger.getLogger(BookingDaoImpl.class.getName());
+	//private Logger logger = Logger.getLogger(BookingDaoImpl.class.getName());
+	private static Logger logger = LoggerFactory.getLogger(BookingDaoImpl.class);
 
 	@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
@@ -73,9 +77,9 @@ public class BookingDaoImpl implements BookingDao {
 		try {
 			hibernateTemplate.save(b);
 		} catch (Exception e) {
-			logger.info("---------------------------------");
+			
 			logger.error("Unable to save booking detail", e);
-			logger.info("---------------------------------");
+			
 			throw new DaoException(e);
 		}
 	}
